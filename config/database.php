@@ -7,7 +7,7 @@
     $user = "postgres";
     $password = "unicesmag";
 
-    //Create connection (los sin $ no se alteran, son parametros de postgres)
+    //Create connection 
     $conn = pg_connect("
         host = $host
         port = $port
@@ -21,4 +21,6 @@
     }else{
         echo "Success  connection";
     }
+
+    pg_close();
 ?>
