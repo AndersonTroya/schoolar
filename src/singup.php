@@ -7,8 +7,10 @@
     $email  = $_POST['e_mail'];
     $passwd = $_POST['passw'];
 
+    $enc_pass = md5($passwd);
+
     $sql = "INSERT INTO users (firstname, lastname, email, password)
-        VALUES('$fname','$lname','$email','$passwd')
+        VALUES('$fname','$lname','$email','$enc_pass')
         ";
 
         $res = pg_query($conn, $sql);
