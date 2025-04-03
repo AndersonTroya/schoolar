@@ -8,11 +8,8 @@
     $passwd = $_POST['passw'];
 
     //encriptado
-    $enc_pass = md5($passwd);
-    //$enc_pass = sha1($passwd);
-
-
-    //validar(antes de insert)
+    $enc_pass = sha1($passwd);
+    //$enc_pass = md5($passwd);
     $sql_valid_mail = "
         SELECT 
             COUNT(email) as total
