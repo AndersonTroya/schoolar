@@ -5,11 +5,11 @@
     $passw  = $_POST['p_sswd'];
 
     $sql = "
-        select 
+    select 
         --id,
         --email,
-        --password
-
+        --password,
+        COUNT(id) as total
     from
         users
     where
@@ -18,7 +18,8 @@
         status = true
     GROUP BY
         id;
-	"
+	";
+
     $res = pg_query($conn, $sql);
 
     if($res){
