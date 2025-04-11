@@ -1,9 +1,10 @@
 <?php
 
     //config connecton
-    /*
-    $host = "localhost";//servidor
-    $port = "5432";//de la BD
+    
+/*
+    $host = "localhost";
+    $port = "5432";
     $dbname = "schoolar";
     $user = "postgres";
     $password = "unicesmag";
@@ -13,7 +14,13 @@
     $dbname = "postgres";
     $user = "postgres.legssiopkwotxcizpxzr";
     $password = "unicesmag@@";
-
+/*
+    $host     = "DB_HOST";
+    $port     = "DB_PORT";
+    $dbname   = "DB_NAME";
+    $user     = "DB_USER";
+    $password = "DB_PASSWORD";
+*/
     //Create connection 
     $conn = pg_connect("
         host = $host
@@ -24,9 +31,9 @@
     ");
 
     if(!$conn){
-        die("Connection error" . pg_last_error());
+        //die("Connection error" . pg_last_error());
     }else{
-        echo "Success  connection";
+        //echo "Success  connection";
     }
 
     pg_close();
