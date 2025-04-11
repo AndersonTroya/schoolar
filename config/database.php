@@ -1,8 +1,7 @@
 <?php
 
     //config connecton
-    
-/*
+    /*
     $host = "localhost";
     $port = "5432";
     $dbname = "schoolar";
