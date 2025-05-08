@@ -1,6 +1,6 @@
 <?php
 
-    //config connecton
+     //config connecton
     /*
     $host = "localhost";
     $port = "5432";

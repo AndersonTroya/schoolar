@@ -2,6 +2,7 @@
     include('../config/database.php');
 
     session_start();
+
     if(isset($_SESSION['user_id'])){
         header('Refresh: 0; URL=http://localhost/schoolar/src/home.html');
     }
@@ -19,7 +20,7 @@
         users
     where
         email = '$email' and 
-        password = '$$enc_pass' and 
+        password = '$enc_pass' and 
         status = true
     GROUP BY 
         id
@@ -30,9 +31,9 @@
     if($res){
         $row = pg_fetch_assoc($res);
         if($row['total'] > 0){
+            //echo "Login OK";
             $_SESSION['user_id'] = $row['id'];
-           // echo "Login OK";
-           header('Refresh: 0; URL=http://localhost/schoolar/src/home.php');
+            header('Refresh: 0; URL=http://localhost/schoolar/src/home.php');
         }else{
             echo "Login failed";
         }
