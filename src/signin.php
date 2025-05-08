@@ -4,7 +4,7 @@
     session_start();
 
     if(isset($_SESSION['user_id'])){
-        header('Refresh: 0; URL=http://localhost/schoolar/src/home.html');
+        header('Refresh: 0; URL=http://localhost/schoolar/src/home.php');
     }
 
     $email = $_POST['e_mail'];

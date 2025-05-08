@@ -15,6 +15,6 @@
     <link rel="icon" type="image/png" href="src/icons/education.png">
 </head>
 <body>
-    <a href="src/signin.html">Logout</a> &nbsp;
+    <a href="signin.html">Logout</a> &nbsp;
 </body>
 </html>
