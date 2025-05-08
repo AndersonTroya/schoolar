@@ -26,6 +26,7 @@
             <tr><td align="center"><button>Login</button></td></tr>
         </table>
     </form>
+    <center><a href=signup.html>I don't have an account</center
 </body>
 </html>
 
