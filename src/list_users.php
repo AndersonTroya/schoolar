@@ -11,28 +11,37 @@
 </head>
 <body>
     <table border="1" align="Center">
-    <tr>
-        <td>Firstname</td>  
-        <td>Lastname</td>
-        <td>E-mail</td>
-        <td>Status</td>
-        <td>...</td>
-    </tr>
-    <tr>
-        <td>Anderson</td>  
-        <td>Troya</td>
-        <td>E-andavidtr@gmail.com</td>
-        <td>TRUE</td>
-        <td>
-            <img src = "icons/editar.png" width="15">
-            <img src = "icons/simbolo-de-bote-de-basura-negro.png" width="15">
-            <img src = "icons/simbolo-de-interfaz-de-lupa-de-busqueda.png" width="15">
-        </td>
-    </tr>
-    <?php
-        //code
-        $sql = "SELECT";
-    ?>
+    
+        <?php
+            //code
+            $sql = "
+                select 
+                    firstname,
+                    lastname,
+                    email,
+                    case when status = true then 'active' else 'No active'end as status
+                from
+                users
+            ";
+            $res = pg_query($con,$sql);
+            if(!$res){
+                echo "Query error";
+                exit;
+            }
+            while($row = pg_fetch_assoc($res)){
+                echo "<tr>";
+                echo "<td>". $row['firstname'] ."</td>";  
+                echo "<td>". $row['lastname'] ."</td>";
+                echo "<td>". $row['email'] ."</td>";
+                echo "<td>". $row['status'] ."</td>";
+                echo "<td>";
+                echo "<img src = 'icons/editar.png' width='15'>";
+                echo "<img src = 'icons/simbolo-de-bote-de-basura-negro.png' width='15'>";
+                echo "<img src = 'icons/simbolo-de-interfaz-de-lupa-de-busqueda.png' width='15'>";
+                echo "</td>";
+                echo "</tr>";
+            }
+        ?>
     </table>
 </body>
 </html>
